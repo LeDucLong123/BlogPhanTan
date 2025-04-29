@@ -1,0 +1,52 @@
+---
+title: 'Hệ thống phân tán là gì?'
+date: '2023-10-26'
+updated: '2023-10-26'
+categories:
+  - 'sveltekit'
+  - 'markdown'
+coverImage: '/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg'
+coverWidth: 16
+coverHeight: 9
+excerpt: Check out how heading links work with this starter in this post.
+---
+
+## Định Nghĩa
+
+**Hệ thống phân tán** (Distributed System) là một tập hợp các máy tính độc lập kết nối với nhau qua mạng, phối hợp để hoàn thành một nhiệm vụ chung. Đối với người dùng, hệ thống hoạt động như một thể thống nhất.
+
+## Đặc Điểm Chính
+
+1. **Tính minh bạch (Transparency)**  
+   Người dùng không cần biết có bao nhiêu máy tính đang tham gia, hoặc chúng nằm ở đâu. Hệ thống ẩn đi sự phân tán để mang lại trải nghiệm như một hệ thống duy nhất.
+
+2. **Tính mở (Openness)**  
+   Hệ thống dễ dàng mở rộng, tích hợp thêm dịch vụ hoặc tương tác với các hệ thống khác mà không cần thay đổi lớn.
+
+3. **Tính chịu lỗi (Fault Tolerance)**  
+   Khi một hoặc vài thành phần bị lỗi, hệ thống vẫn có thể hoạt động bình thường hoặc giảm thiểu gián đoạn.
+
+4. **Tính mở rộng (Scalability)**  
+   Hệ thống có khả năng mở rộng quy mô bằng cách thêm máy tính hoặc tài nguyên để đáp ứng nhu cầu xử lý lớn hơn.
+
+### Ví Dụ Về Hệ Thống Phân Tán
+
+- **Google Drive**, **Dropbox** – Lưu trữ và đồng bộ dữ liệu qua nhiều máy chủ.
+- **Facebook**, **Amazon**, **Netflix** – Xử lý và phân phối nội dung đến hàng triệu người dùng trên toàn cầu.
+- **Hệ thống blockchain** – Các nút mạng phân tán xác nhận và lưu trữ giao dịch.
+
+### Ưu Điểm
+
+- Hiệu suất cao khi xử lý tác vụ lớn.
+- Khả năng phục hồi cao.
+- Dễ mở rộng hệ thống.
+
+### Nhược Điểm
+
+- Khó thiết kế và quản lý.
+- Phức tạp trong việc xử lý đồng bộ dữ liệu.
+- Yêu cầu hệ thống mạng ổn định và bảo mật cao.
+
+### Kết Luận
+
+Hệ thống phân tán là nền tảng quan trọng trong công nghệ hiện đại, đặc biệt với các ứng dụng yêu cầu tính mở rộng, độ tin cậy và khả năng xử lý lớn. Việc hiểu và áp dụng đúng kiến thức về hệ thống phân tán sẽ giúp xây dựng các ứng dụng hiệu quả và mạnh mẽ hơn.
