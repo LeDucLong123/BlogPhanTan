@@ -8,7 +8,7 @@ categories:
 coverImage: '/images/truyen-thong.jpg'
 coverWidth: 16
 coverHeight: 9
-excerpt: Chia nhỏ dữ liệu và xử lý song song để tiết kiệm thời gian.
+excerpt: Đảm bảo thông điệp được gửi đi không bị mất ...
 ---
 
 ## 1. Tìm hiểu dịch vụ truyền thông điệp
