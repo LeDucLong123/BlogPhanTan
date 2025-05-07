@@ -8,7 +8,7 @@ categories:
 coverImage: '/images/tien_trinh_va_luong.png'
 coverWidth: 16
 coverHeight: 9
-excerpt: Tập hợp các máy tính độc lập kết nối với nhau qua mạng, phối hợp...
+excerpt: Chia nhỏ dữ liệu và xử lý song song để tiết kiệm thời gian.
 ---
 
 ## 1. Đánh giá hiệu năng máy tính của bạn
