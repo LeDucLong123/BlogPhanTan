@@ -1,11 +1,11 @@
 ---
 title: 'Deliverable 1: Giới thiệu InfluxDB'
 date: '2025-5-5'
-updated: '2025-5-5'
+updated: '2025-5-9'
 categories:
   - 'sveltekit'
   - 'markdown'
-coverImage: '/images/gioi-thieu-influx.png'
+coverImage: '/images/gioi-thieu-influx/gioi-thieu-influx.png'
 coverWidth: 16
 coverHeight: 9
 excerpt: InfluxDB dùng để tương tác với cơ sở dữ liệu chuỗi thời gian ...
@@ -85,27 +85,50 @@ Nó hỗ trợ việc ghi dữ liệu, truy vấn, quản lý cơ sở dữ li�
 - Mô phỏng dữ liệu cảm biến bằng cách sinh ngẫu nhiên bằng mã Python:
 
 ```python
-import random
-from datetime import datetime, timedelta
-from influxdb_client import InfluxDBClient, Point, WriteOptions
+from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS
+from datetime import datetime, timezone
+import random  # Thêm import để tạo giá trị ngẫu nhiên
+import time
 
-client = InfluxDBClient(url="http://localhost:8086", token="your_token", org="your_org")
-write_api = client.write_api(write_options=WriteOptions(batch_size=1))
+# ✅ Thay bằng giá trị thật bạn copy được từ giao diện InfluxDB
+url = "http://localhost:8086"
+token = "theG93XjjKsPWUPFKigUhGLv3absn_6Ws_R6zuT9mK8-3-gcKWe7YAr3uJcu5tST5yEznaCapKLBFz0R-9xkpQ=="
+org = "leduclong"
+bucket = "leduclong"
 
-start_time = datetime.utcnow() - timedelta(hours=1)
-for i in range(60):
-    temp = round(random.uniform(20.0, 35.0), 2)
-    time_point = start_time + timedelta(minutes=i)
-    point = Point("temperature_sensor").field("value", temp).time(time_point)
-    write_api.write(bucket="your_bucket", record=point)
+client = InfluxDBClient(url=url, token=token, org=org)
+write_api = client.write_api(write_options=SYNCHRONOUS)
+
+while True:
+    # ✅ Sinh nhiệt độ ngẫu nhiên trong khoảng 20.0°C - 35.0°C
+    temperature = round(random.uniform(20.0, 35.0), 2)
+
+    point = Point("temperature") \
+        .tag("location", "office") \
+        .field("value", temperature) \
+        .time(datetime.now(timezone.utc))  # Sử dụng timezone-aware datetime
+
+    write_api.write(bucket=bucket, org=org, record=point)
+    print(f"✅ Đã ghi dữ liệu thành công! Giá trị: {temperature}°C")
+
+    time.sleep(1)
 ```
 
 ```bash
-timestamp,temperature
-2025-05-08T08:00:00Z,22.5
-2025-05-08T08:05:00Z,23.1
+✅ Đã ghi dữ liệu thành công! Giá trị: 33.98°C
+✅ Đã ghi dữ liệu thành công! Giá trị: 20.42°C
+✅ Đã ghi dữ liệu thành công! Giá trị: 30.41°C
+✅ Đã ghi dữ liệu thành công! Giá trị: 22.5°C
+✅ Đã ghi dữ liệu thành công! Giá trị: 29.41°C
 ...
 ```
+
+![Mô phỏng](/images/gioi-thieu-influx/mo-phong.png)
+
+- Hiển thị biểu đồ biểu diễn cho dữ liệu bằng dịch vụ của **InfluxDB**:
+
+![Mô phỏng](/images/gioi-thieu-influx/hien-thi.png)
 
 #### Kế hoạch thực hiện:
 
