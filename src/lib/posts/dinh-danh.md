@@ -8,7 +8,7 @@ categories:
 coverImage: '/images/dinh-danh/dinh-danh.jpg'
 coverWidth: 16
 coverHeight: 9
-excerpt: Đảm bảo thông điệp được gửi đi không bị mất ...
+excerpt: Mô hình nổi tiếng trong mạng máy tính, được áp dụng rất rộng rãi ...
 ---
 
 ## 1. Cách thức hoạt động của một trang web - Mô hình Client và Server
