@@ -18,27 +18,43 @@ excerpt: Kiến trúc hệ thống (System Architecture Diagram)...
 ### 1. Kiến trúc hệ thống (System Architecture Diagram)
 
 ```mermaid
-graph TD
-    A[Client] --> B[NGINX Load Balancer]
-    B --> C1[App Web 1 (Node.js)]
-    B --> C2[App Web 2 (Node.js)]
-    B --> C3[App Web 3 (Node.js)]
+sequenceDiagram
+    participant Client
+    participant RequestGen as Request Generator
+    participant NGINX as NGINX Load Balancer
+    participant App1 as App Web 1 (Node.js)
+    participant App2 as App Web 2 (Node.js)
+    participant App3 as App Web 3 (Node.js)
+    participant DB1 as InfluxDB-1
+    participant DB2 as InfluxDB-2
+    participant DB3 as InfluxDB-3
+    participant API as API Service
+    participant View as View Dashboard
 
-    C1 --> D1[InfluxDB-1]
-    C2 --> D2[InfluxDB-2]
-    C3 --> D3[InfluxDB-3]
+    Client->>NGINX: HTTP Request
+    RequestGen->>NGINX: Generate Load
 
-    D1 <--> D2
-    D2 <--> D3
-    D3 <--> D1
+    alt Load balanced to App1
+        NGINX->>App1: Forward Request
+        App1->>DB1: Log Request Data
+    else Load balanced to App2
+        NGINX->>App2: Forward Request
+        App2->>DB2: Log Request Data
+    else Load balanced to App3
+        NGINX->>App3: Forward Request
+        App3->>DB3: Log Request Data
+    end
 
-    E[Request Generator] --> B
+    DB1-->>DB2: Data Sync (optional)
+    DB2-->>DB3: Data Sync (optional)
+    DB3-->>DB1: Data Sync (optional)
 
-    F[API Service] --> D1
-    F --> D2
-    F --> D3
+    View->>API: Request Metrics
+    API->>DB1: Query Data
+    API->>DB2: Query Data
+    API->>DB3: Query Data
+    API-->>View: Return Aggregated Data
 
-    G[View Dashboard] --> F
 ```
 
 ### 2. Mô tả các thành phần trong hệ thống
