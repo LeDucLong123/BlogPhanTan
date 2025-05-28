@@ -82,17 +82,17 @@ excerpt: Phân biệt Hệ thống Phân tán, Tập trung, Phi ...
 ## 8. Hình ảnh thuật toán đồng bộ
 
 - Cristian's Algorithm
-  ![Cristian's Algorithm](/static/images/algorithm/cristian.png)
+  ![Cristian's Algorithm](/images/algorithm/cristian.png)
 - Berkeley Algorithm
-  ![Berkeley Algorithm](/static/images/algorithm/berkeley.png)
+  ![Berkeley Algorithm](/images/algorithm/berkeley.png)
 - RBS (Reference Broadcast Synchronization)
-  ![RBS](/static/images/algorithm/RBS.png)
+  ![RBS](/images/algorithm/RBS.png)
 - Lamport Clock
-  ![Lamport Clock](/static/images/algorithm/clocks-lamport.png)
+  ![Lamport Clock](/images/algorithm/clocks-lamport.png)
 - Bully Algorithm
-  ![Bully Algorithm](/static/images/algorithm/bully.png)
+  ![Bully Algorithm](/images/algorithm/bully.png)
 - Ring Election Algorithm
-  ![Ring Election Algorithm](/static/images/algorithm/ring-election.png)
+  ![Ring Election Algorithm](/images/algorithm/ring-election.png)
 
 ---
 
