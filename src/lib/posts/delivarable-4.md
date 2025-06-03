@@ -11,9 +11,9 @@ coverHeight: 9
 excerpt: ĐỀ XUẤT GIẢI PHÁP VÀ HƯỚNG PHÁT TRIỂN...
 ---
 
-- **Link github code:** [HERE](https://github.com/LeDucLong123/APP-PHAN-TAN);
+- **Link github code:** <a href="https://github.com/LeDucLong123/APP-PHAN-TAN" style="color:red">HERE</a>
 
-- Lê Đưc Long - 23010016 - 23010016@st.phenikaa-uni.edu.vn
+- Lê Đức Long - 23010016 - 23010016@st.phenikaa-uni.edu.vn
 - Phan Văn Công - 22010158 - 22010158@st.phenikaa-uni.edu.vn
 
 # MỤC LỤC
